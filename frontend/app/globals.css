@@ -1,0 +1,110 @@
+@import "tailwindcss";
+
+/* Postman authentic dark theme — matches real Postman's color palette */
+:root {
+  /* Main backgrounds */
+  --bg-primary: #1c1c1c;        /* main workspace background */
+  --bg-secondary: #252525;      /* sidebar background */
+  --bg-panel: #2d2d2d;          /* request builder panel */
+  --bg-card: #2a2a2a;           /* cards, table rows */
+  --bg-hover: #333333;          /* hover state */
+  --bg-active: #3a3a3a;         /* active/selected */
+  --bg-input: #1c1c1c;          /* input fields */
+  --bg-topbar: #212121;         /* top navigation bar */
+  --bg-tabbar: #1c1c1c;         /* tab bar */
+
+  /* Borders */
+  --border: #3a3a3a;
+  --border-light: #4a4a4a;
+
+  /* Text */
+  --text-primary: #e0e0e0;
+  --text-secondary: #9e9e9e;
+  --text-muted: #666666;
+
+  /* Postman orange accent */
+  --accent: #ff6c37;
+  --accent-hover: #ff7c4d;
+  --accent-dim: rgba(255, 108, 55, 0.15);
+
+  /* HTTP method / status colors */
+  --green: #49cc90;
+  --blue: #61affe;
+  --red: #f93e3e;
+  --yellow: #fca130;
+  --purple: #9012fe;
+  --teal: #50e3c2;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background: var(--bg-primary);
+  color: var(--text-primary);
+  font-family: -apple-system, BlinkMacSystemFont, 'Inter', 'Segoe UI', sans-serif;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+/* Scrollbars */
+::-webkit-scrollbar { width: 6px; height: 6px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: var(--border-light); }
+
+/* Input base */
+input, textarea, select {
+  background: var(--bg-input);
+  border: 1px solid var(--border);
+  color: var(--text-primary);
+  outline: none;
+  font-family: inherit;
+  font-size: 13px;
+}
+
+input:focus, textarea:focus, select:focus {
+  border-color: var(--accent);
+}
+
+input::placeholder, textarea::placeholder {
+  color: var(--text-muted);
+}
+
+/* Remove autofill styling */
+input:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--bg-input) inset;
+  -webkit-text-fill-color: var(--text-primary);
+}
+
+/* Code font */
+.font-mono { font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace; }
+
+/* Method badge colors */
+.method-GET    { color: #61affe; }
+.method-POST   { color: #49cc90; }
+.method-PUT    { color: #fca130; }
+.method-PATCH  { color: #50e3c2; }
+.method-DELETE { color: #f93e3e; }
+.method-HEAD   { color: #9012fe; }
+.method-OPTIONS { color: #0d5aa7; }
+
+/* Transitions */
+.transition-all { transition: all 0.15s ease; }
+
+/* Tab unsaved indicator */
+.tab-dirty::after {
+  content: '';
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  margin-left: 6px;
+  vertical-align: middle;
+}
