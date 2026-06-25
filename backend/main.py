@@ -45,7 +45,7 @@ app.add_middleware(
     CORSMiddleware,
     allow_origins=[
         "http://localhost:3000",
-        "https://nikhils-postman.vercel.app",  # replace with your actual Vercel URL
+        "https://nikhil-postman.vercel.app",  # replace with your actual Vercel URL
     ],
     allow_credentials=True,
     allow_methods=["*"],
