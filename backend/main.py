@@ -43,7 +43,10 @@ app = FastAPI(title="PostmanClone API", version="1.0.0")
 # Allow the Next.js frontend (running on port 3000) to call this API
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:3000", "http://127.0.0.1:3000"],
+    allow_origins=[
+        "http://localhost:3000",
+        "https://nikhils-postman.vercel.app",  # replace with your actual Vercel URL
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
